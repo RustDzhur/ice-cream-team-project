@@ -1,11 +1,11 @@
 {
-  "name": "13attempts_goit_project",
+  "name": "ice-cream-team-project",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://smisyuk4.github.io/13attempts_goit_project",
+  "homepage": "https://rustdzhur.github.io/ice-cream-team-project/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /13attempts_goit_project/"
+    "build": "parcel build src/*.html --public-url /ice-cream-team-project/"
   },
   "repository": {
     "type": "git",
