@@ -1,0 +1,269 @@
+.about {
+  padding-top: 60px;
+  background-color: var(--first-bg-color);
+  align-content: center;
+
+  @media screen and (min-width: 1200px) {
+    background-image: url('../images/about/milk1x.png');
+    background-repeat: no-repeat;
+    background-position: 50% 77%;
+    background-size: contain;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../images/about/milk2x.png');
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__img {
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+
+  &__text-info {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.58;
+    color: var(--main-color);
+    width: 220px;
+    padding-bottom: 40px;
+    // padding-right: 80px;
+    text-align: start;
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+      line-height: 1.79;
+      width: 334px;
+      padding-bottom: 32px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 16px;
+      line-height: 1.75;
+      width: 453px;
+      padding-bottom: 32px;
+      z-index: 1;
+    }
+  }
+
+  &__text-label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.58;
+    color: #907e82;
+    width: 220px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+      line-height: 1.79;
+      width: 334px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 16px;
+      line-height: 1.75;
+      width: 453px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      padding-top: 40px;
+      gap: 32px;
+      z-index: 1;
+    }
+
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      flex-direction: row;
+      padding-top: 150px;
+      gap: 99px;
+    }
+  }
+
+  &__item {
+    @media screen and (min-width: 1200px) {
+      padding-top: -120px;
+    }
+  }
+
+  &__button {
+    width: 176px;
+    height: 44px;
+    background-color: var(--third-color);
+    border-radius: 22px;
+    color: var(--brand-color);
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__button:hover,
+  &__button:focus {
+    background-color: #ecebeb;
+  }
+
+  &__button-img {
+    margin-left: 13px;
+  }
+
+  &__logo {
+    @media screen and (min-width: 1200px) {
+      margin-top: -130px;
+    }
+  }
+
+  &__modal-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: auto;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__modal-btn:hover {
+    fill: blue;
+  }
+
+  &__modal-img {
+    display: block;
+    max-width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  &__text-modal {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.16;
+    color: black;
+
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+  }
+
+  // модольне вікно
+}
+
+.about__modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__list-info {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.about__backdrop {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff5f6;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  transition-property: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+// .about__list.is-hidden {
+//   opacity: 0;
+//   visibility: hidden;
+//   pointer-events: none;
+// }
+
+.about__backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.about__backdrop.is-hidden .about_modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.about_modal {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 2;
+
+  @media screen and (min-width: 320px) {
+    width: 95%;
+    height: 50%;
+  }
+  @media screen and (min-width: 768px) {
+    width: 450px;
+    height: 609px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .about--color {
+    background-image: url(../images/about/milk_mob.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    // background-position: 0 75px;
+  }
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
